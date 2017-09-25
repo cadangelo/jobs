@@ -17,8 +17,8 @@ $bi $bcf
 $xe $res
 
 # compile references
-#$xe $ref
-#$xe $ref
+$xe $ref
+$xe $ref
 
 # compile references long
 #$xe $ref_long
