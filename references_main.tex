@@ -1,0 +1,44 @@
+% Casey Anderson Resume (Modular Version)
+%
+% Compile:
+%  xetex $.tex
+%  biber $.bcf
+%  xetex $.tex
+
+% NOTES:
+%  - \vspace{Xmm} shifts vertical spacing between text lines.
+%    This is used frequently between sections to manually adjust spacings
+
+% ----------------------------------------------------------------------------
+% - Set up the document class
+% ----------------------------------------------------------------------------
+\documentclass[a4paper,10pt]{article}
+
+% ----------------------------------------------------------------------------
+% Add the preamble (ie, packages and formatting definitions)
+% ----------------------------------------------------------------------------
+\input{preamble}
+
+% ----------------------------------------------------------------------------
+% Begin the main document 
+% ----------------------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------------------
+% Set the main body of the document (page #, sloppy)
+% ----------------------------------------------------------------------------
+\pagestyle{empty} 		% non-numbered pages
+\sloppy 			% sloppy for flush left and right edges
+
+% ----------------------------------------------------------------------------
+% Include my header section of the document
+% ----------------------------------------------------------------------------
+\input{header}  	% Header file (small font)
+
+% ----------------------------------------------------------------------------
+% References List
+% ----------------------------------------------------------------------------
+\normalsize \vspace{-2mm}
+\input{references}
+
+\end{document}
