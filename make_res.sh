@@ -25,8 +25,8 @@ $xe $ref
 #$xe $ref_long
 
 # compile cover letter
-#$xe $cov
-#$xe $cov
+$xe $cov
+$xe $cov
 
 #cp $pdf $irc
 
