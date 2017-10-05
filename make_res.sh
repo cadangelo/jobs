@@ -12,13 +12,13 @@ ref_long='references_long_main.tex'
 cov='coverletter_main.tex'
 
 # comiple resume
-$xe $res
-$bi $bcf
-$xe $res
+#$xe $res
+#$bi $bcf
+#$xe $res
 
 # compile references
-$xe $ref
-$xe $ref
+#$xe $ref
+#$xe $ref
 
 # compile references long
 #$xe $ref_long
@@ -26,6 +26,7 @@ $xe $ref
 
 # compile cover letter
 $xe $cov
+$bi $bcf
 $xe $cov
 
 #cp $pdf $irc
