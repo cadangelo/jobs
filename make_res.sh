@@ -9,7 +9,7 @@ irc='resume_dangelo.pdf'
 
 ref='references_main.tex'
 ref_long='references_long_main.tex'
-cov='coverletter_main.tex'
+cov='coverletter_main_chels.tex'
 
 # comiple resume
 $xe $res
