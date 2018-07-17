@@ -12,7 +12,7 @@
 % ----------------------------------------------------------------------------
 % - Set up the document class
 % ----------------------------------------------------------------------------
-\documentclass[a4paper,10pt]{article}
+\documentclass[letterpaper]{article}
 
 % ----------------------------------------------------------------------------
 % Add the preamble (ie, packages and formatting definitions)
@@ -32,12 +32,14 @@
 % ----------------------------------------------------------------------------
 % Set the main body of the document (page #, sloppy)
 % ----------------------------------------------------------------------------
-\pagestyle{empty} 		% non-numbered pages
-\sloppy 			% sloppy for flush left and right edges
+%\pagestyle{empty} 		% non-numbered pages
+\thispagestyle{empty}
+%\sloppy 			% sloppy for flush left and right edges
 
 % ----------------------------------------------------------------------------
 % Include my header section of the document
 % ----------------------------------------------------------------------------
+\vspace{-2mm}
 \input{header}  	% Header file (small font)
 
 % ----------------------------------------------------------------------------
@@ -49,13 +51,13 @@
 % Edcuation
 % ----------------------------------------------------------------------------
 %\input{education_section} \vspace{-2mm}
-\vspace{5mm}
-\input{education_section} \vspace{5mm}
+\vspace{2mm}
+\input{education_section} \vspace{2mm}
 
 % ----------------------------------------------------------------------------
 % Work & Research Experience
 % ----------------------------------------------------------------------------
-\input{workexperience_section} \vspace{5mm}
+\input{workexperience_section} \vspace{2mm}
 
 % ----------------------------------------------------------------------------
 % Leadership & Volunteer Experience
@@ -66,7 +68,7 @@
 % ----------------------------------------------------------------------------
 % Computer Skills
 % ----------------------------------------------------------------------------
-\input{computerskills_section} \vspace{5mm}
+\input{computerskills_section} \vspace{3mm}
 
 
 
