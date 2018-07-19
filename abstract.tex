@@ -1,7 +1,9 @@
-\title{Summary: Monte Carlo Variance Reduction for Multi-physics Processes in Moving Systems}
-\author{Chelsea A. D'Angelo}
+\title{Summary: Monte Carlo Variance Reduction for 
+Multi-physics Analysis of Moving Systems\vspace{-0.7cm}}
+\author{Chelsea A. D'Angelo\vspace{-0.8cm}}
 \documentclass[12pt]{article}
-%\pagestyle{empty}
+\usepackage{titling}
+\setlength{\droptitle}{-80pt}
 
 \begin{document}
 \maketitle
@@ -14,9 +16,11 @@ by the motion of one or more components.
 For example, fusion energy systems (FES) are purposefully designed with modular components that can be moved in and
 out of a facility after shutdown for maintenance purposes.  
   It is particularly important to accurately quantify 
-the shutdown dose rate (SDR), caused by the photons emitted by activated structural materials,
+the shutdown dose rate (SDR)
 during maintenance procedures that may cause facility personnel to be in closer
 proximity to activated equipment.
+The SDR is caused by the photons emitted by structural materials activated by
+neutron irradiation during device operation.
 This type of analysis requires neutron transport to determine the neutron flux,
 activation analysis to determine the isotopic inventory, and finally a 
 photon transport calculation to determine the SDR.
@@ -31,52 +35,69 @@ There are several types
 of VR methods, but the basic theory is to artificially increase the simulation of
 events that will contribute to the quantity of interest such as flux or dose
 rate. 
- One class of VR techniques takes advantage of a deterministic estimate of the adjoint 
-solution of the transport equation to automatically
-generate biasing parameters to accelerate the MC transport. 
+
+One class of VR techniques, known as hybrid deterministic/MC, takes advantage of
+the speed of deterministic codes to calculate an estimate of the adjoint 
+%solution of the transport equation 
+flux
+to automatically
+generate biasing parameters to accelerate MC transport. 
 The adjoint flux has significance as the importance of a region of
 phase space to the objective function.
 
-One hybrid VR technique used to optimize the initial transport step of a
+One hybrid VR technique used to optimize the initial transport step of a coupled,
 multi-step process is known as 
 the Multi-Step Consistent Adjoint Driven Importance Sampling
 (MS-CADIS). 
  The basis of MS-CADIS is that the importance (adjoint) function used
 in each step of the problem must represent the importance of the particles to
 the final objective function.  
-%As the spatial configuration of the materials
-%changes, the probability that they will contribute to the objective function
-%also changes.
 In the specific case of SDR calculations, the importance function for the neutron transport step
 must capture the probability of materials to become activated and subsequently emit photons that
 will make a significant contribution to the SDR.
+
 The Groupwise Transmutation (GT)-CADIS method 
 is an implementation of MS-CADIS
 that optimizes the neutron transport step of SDR calculations.
 GT-CADIS generates an adjoint
 neutron source based on certain assumptions and approximations about the
 transmutation network.  
-This source is used for adjoint transport and the resulting flux is used to
+This source is used for adjoint neutron transport and the resulting flux is used to
 generate the biasing parameters to optimize the forward neutron transport.
-For cases involving coupled multi-physics analysis in dynamics systems, such as SDR calculations
+
+For cases involving geometry movement after the initial radiation transport,
+such as SDR calculations
 during maintenance activities,
-a new hybrid deterministic/MC VR technique that extends 
+%where the spatial configuration of the geometry changes,
+% the probability that they will contribute 
+the importance %of particles
+of the moving regions
+to the objective function changes over time.
+The necessitates a construction of the adjoint neutron source that takes
+the movement into account.
+% involving coupled multi-physics analysis in dynamics systems,
+A new hybrid VR technique that extends 
 GT-CADIS for dynamic systems by calculating a time-integrated adjoint
 neutron source is currently in development.
+This method is called the Time-integrated (T)GT-CADIS method and to date,
+tools have been developed to implement 
+rigid-body transformations on CAD-based geometry %that serves as input 
+%for both deterministic and Monte Carlo radiation transport.
+%Tools have also been developed 
+and to collect and manipulate the adjoint
+flux data from each time step of geometry movement after shutdown.
+% which is ultimately used to create VR parameters to optimize the forward neutron transport.
 
 The successful completion of this project will demonstrate the efficacy of a workflow and tools
 necessary to efficiently calculate quantities of interest resulting from
 coupled, multi-physics processes in dynamic systems.  
-The driving force behind this work is the quantification of the
-SDR resulting from the coupled neutron
-irradiation-photon emission that occurs in FES;
-specifically investigating how to optimize the SDR calculation when %changes as a function of time when
-activated system components are moved during maintenance activities.
-Tools have been constructed to implement 
-rigid-body transformations on CAD-based geometry that serves as input for both
-deterministic and Monte Carlo radiation transport.
-Other tools have been developed to collect and manipulate the adjoint
-flux data from each time step of geometry movement after shutdown which is
-ultimately used to create VR parameters to optimize the forward neutron transport.
+%The driving force behind this work is the quantification of the
+The specific case demonstrated will be the comparison of efficiency in analog
+versus TGT-CADIS optimized quantification of the SDR in an experimental or conceptual
+model of a fusion energy system.
+%resulting from the coupled neutron
+%irradiation-photon emission that occurs in FES;
+%specifically investigating how to optimize the SDR calculation when %changes as a function of time when
+%activated system components are moved during maintenance activities.
 
 \end{document}

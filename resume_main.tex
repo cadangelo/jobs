@@ -8,11 +8,13 @@
 % NOTES:
 %  - \vspace{Xmm} shifts vertical spacing between text lines.
 %    This is used frequently between sections to manually adjust spacings
-
 % ----------------------------------------------------------------------------
 % - Set up the document class
 % ----------------------------------------------------------------------------
 \documentclass[letterpaper]{article}
+%\usepackage[showframe]{geometry}
+%\usepackage{layout}
+%\setlength{\voffset}{-0.75in}
 
 % ----------------------------------------------------------------------------
 % Add the preamble (ie, packages and formatting definitions)
@@ -39,7 +41,7 @@
 % ----------------------------------------------------------------------------
 % Include my header section of the document
 % ----------------------------------------------------------------------------
-\vspace{-2mm}
+\vspace{-6mm}
 \input{header}  	% Header file (small font)
 
 % ----------------------------------------------------------------------------
@@ -68,7 +70,7 @@
 % ----------------------------------------------------------------------------
 % Computer Skills
 % ----------------------------------------------------------------------------
-\input{computerskills_section} \vspace{3mm}
+\input{computerskills_section} %\vspace{3mm}
 
 
 
@@ -85,13 +87,14 @@
 % ----------------------------------------------------------------------------
 % Publications & Presentations (Made this large just because)
 % ----------------------------------------------------------------------------
+\vspace{-8mm}
 \large \input{publication_section}
 
 % ----------------------------------------------------------------------------
 % References (this is just the section that points to them...)
 % ----------------------------------------------------------------------------
 %\input{references_section} \vspace{3mm}
-\input{references} \vspace{3mm}
+\input{references} \vspace{-2mm}
 
 % ----------------------------------------------------------------------------
 % Classes 
